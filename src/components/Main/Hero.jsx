@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[50vh] bg-[#F7F8F9] text-center py-10">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[#F7F8F9] text-center py-10">
       <div className="text-[#22C55E] bg-[#DCFCE7] p-2 rounded-full ">
         <p className="font-semibold">GALLERY</p>
       </div>
