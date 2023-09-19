@@ -8,7 +8,12 @@ export default function GalleryContainer() {
   const [selectedTag, setSelectedTag] = useState("All");
   return (
     <div className="py-20 px-10 md:px-20">
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 items-center">
+        <p
+          className="text-gray-500 text-sm font-medium"
+        >
+          Filter by:{" "}
+        </p>
         {tags.map((tag, index) => {
           return (
             <button
@@ -27,6 +32,6 @@ export default function GalleryContainer() {
         })}
       </div>
       <DragContainer selectedTag={selectedTag} />
-    </div>
+    </div>  
   );
 }
