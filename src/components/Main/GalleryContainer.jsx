@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
-// import TagFilter from "./TagFilter";
-import DragContainer from "./DragContainer";
+import React, { useState, useEffect, useRef } from "react";
+import NewDragContainer from "./NewDragContainer";
 
 const tags = ["All", "Technology", "Startups", "Architecture", "Marketing"];
 
 export default function GalleryContainer() {
   const [selectedTag, setSelectedTag] = useState("All");
+  
+
   return (
     <div className="py-20 px-10 md:px-20">
-      <div className="flex flex-wrap gap-2 items-center">
+      <div id="gallery" className="flex flex-wrap gap-2 items-center">
         <p
           className="text-gray-500 text-sm font-medium"
         >
@@ -31,7 +32,8 @@ export default function GalleryContainer() {
           );
         })}
       </div>
-      <DragContainer selectedTag={selectedTag} />
+      {/* <DragContainer selectedTag={selectedTag} /> */}
+      <NewDragContainer selectedTag={selectedTag} />
     </div>  
   );
 }

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./ImageCard.css";
 
-export default function ImageCard({ image, tag }) {
+export default function ImageCard({ image, tag, dragging, setDragging }) {
   useEffect(() => {
     const handleScroll = () => {
       const elements = document.querySelectorAll(".fade-in");
@@ -25,7 +25,7 @@ export default function ImageCard({ image, tag }) {
   }, []);
 
   return (
-    <div className="bg-white cursor-drop image-card fade-in">
+    <div className="bg-white cursor-drop image-card fade-in cursor-grab">
       <div className="w-full bg-cover bg-center rounded-xl overflow-hidden">
         <img src={image} alt="" className="h-full w-full" />
       </div>

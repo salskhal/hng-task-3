@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             <div className="col-span-2 lg:col-span-1">
-              <h1 className="text-[#22C55E] font-bold text-2xl mb-5">Logo</h1>
+              <h1 className="text-[#22C55E] font-bold text-2xl mb-5">HNG Stage 3</h1>
               <p className="text-[#4F4F4F] text-sm mb-5">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
                 at purus eu risus aliquet dignissim.{" "}
@@ -62,7 +62,9 @@ export default function Footer() {
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between">
               <p className="text-[#4F4F4F] text-sm">
-                © 2021 All Rights Reserved.
+                © {
+                  new Date().getFullYear()
+                } All Rights Reserved.
               </p>
               <div className="flex items-center">
                 <p className="text-[#4F4F4F] text-sm mr-5">

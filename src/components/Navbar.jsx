@@ -14,7 +14,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between py-5">
           <div className="flex items-center">
             <Link to="/">
-              <h1 className="text-[#22C55E] font-bold text-2xl">Logo</h1>
+              <h1 className="text-[#22C55E] font-bold text-2xl">HNG Stage 3</h1>
             </Link>
           </div>
           <div className="flex items-center">

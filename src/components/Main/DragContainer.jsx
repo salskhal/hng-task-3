@@ -82,6 +82,7 @@ export default function DrapContainer({ selectedTag }) {
   ];
 
   const [filteredImages, setFilteredImages] = useState([]);
+  const [dragging, setDragging] = useState(false);
 
   useEffect(() => {
     if (selectedTag === "All") {
@@ -92,13 +93,30 @@ export default function DrapContainer({ selectedTag }) {
     }
   }, [selectedTag]);
 
+  const detectLeftButton = (event) => {
+    event = event || window.event;
+    if ("buttons" in event) {
+      return event.buttons === 1;
+    }
+    const button = event.which || event.button;
+    return button === 1;
+  };
+
+  const dragStart = (e, index) => {
+    if(!detectLeftButton()) return;
+    
+    setDragging(true);
+  };
+
   return (
     <div className="mt-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {filteredImages.map((image, index) => {
           return (
-            <div key={index}>
-              <ImageCard image={image.image} tag={image.tag} />
+            <div key={index} onPointerDown={(e) => dragStart(e, index)}>
+              <ImageCard image={image.image} tag={image.tag} 
+              dragging={dragging} setDragging={setDragging}
+              />
             </div>
           );
         })}

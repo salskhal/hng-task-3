@@ -1,10 +1,5 @@
 # HNG Stage three task
 
-<!-- add image -->
-![HNG](./src/assets/Desktop.png)
-![HNG](./src/assets/Mobile.png)
-
-
 ## Task
 
 Develop a Drag-and-Drop Image gallery using React or Next Js
@@ -23,10 +18,50 @@ A user should be able to Login to the gallery page. Authenticated users should b
 - Responsive Design
 - Design flexibilty 
 
-## Instructions to run Locally
+## Getting Started
 
-- Clone the repo
-- Go to the directory
-- Run "npm install" to install all the dependencies
-- You are live
+To get started with this project, follow these steps:
 
+1. Clone the repository to your local machine:
+
+2. Navigate to the project directory:
+
+3. Install the required dependencies:
+   npm install
+
+4. Start the development server:
+   npm run dev to start the development server
+
+
+## Login Credentials
+
+Before accessing the main page, you need to log in with the following credentials:
+
+- Email: user@example.com
+- Password: 1Password
+
+## Technologies Used
+
+- React
+- Next Js
+- Tailwind CSS
+- @dnd-kit/core
+
+## Screenshot
+
+![screenshot](./public/screenshot.png)
+
+## Available Features
+
+- Login
+- Drag and Drop
+- Filter by Tags
+
+## Live Demo
+
+[Live Demo Link](https://dropndrag.netlify.app/)
+
+## Author
+
+- Github: [@salskhal](https://github.com/salskhal)
+- Twitter: [@salskhal](https://twitter.com/salskhal)

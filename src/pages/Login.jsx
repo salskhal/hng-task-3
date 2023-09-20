@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import  { useState, useEffect } from "react";
+import {  useNavigate } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (localStorage.getItem("isAuthenticated")) {
@@ -12,9 +13,10 @@ export default function Login() {
     }
   }, [navigate]);
 
-  
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    setError("");
 
     if (email === "user@example.com" && password === "1Password") {
       localStorage.setItem("isAuthenticated", true);
@@ -23,13 +25,17 @@ export default function Login() {
         navigate("/");
       }, 1000);
     } else {
-      alert("Invalid credentials");
+      setTimeout(() => {
+        
+        setError("Invalid credentials");
+      }, 1000);
     }
   };
 
   return (
     <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+        <h1 className="mt-10 text-center text-3xl font-bold leading-9 tracking-tight text-gray-900">HNG Stage 3</h1>
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
           Sign in to your account
         </h2>
@@ -76,6 +82,10 @@ export default function Login() {
               />
             </div>
           </div>
+
+          {error && (
+            <span className="text-red-500">{error}</span>
+          )}
 
           <div>
             <button
